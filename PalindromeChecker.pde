@@ -17,31 +17,41 @@ public void setup()
 public String reverse(String jWord)
 {
   String j = new String();
-  int nLast = word.length()-1;
+  int nLast = jWord.length()-1;
   for(int i = nLast; i>= 0; i--)
   {
-    j = j + word.substring(i, i+1);
+    j = j + jWord.substring(i, i+1);
   }
   j = j.toLowerCase();
   return j;
 }
 public String noSpaces(String kWord){
   String k = new String();
-  for(int i = 0; i < sWord.length(); i++)
+  for(int i = 0; i < kWord.length(); i++)
   {
-    if(sWord.charAt(i) != ' ')
+    if(kWord.charAt(i) != ' ')
     {
-      k = k + sWord.substring(i,i+1);
+      k = k + kWord.substring(i,i+1);
     }
   }
   return k;
 }
-    
+public String noPunctuation(String lWord){
+  String l = new String();
+  for(int i = 0; i < lWord.length(); i++)
+  {
+  if(Character.isLetter(lWord.charAt(i)) == true)
+    l = l + lWord.charAt(i);
+  }
+  return l;
+}    
 
-public boolean palindrome(String word)
+public boolean palindrome(String pWord)
 {
- j = word.noSpaces();
- if(j ==)
-  return false;
+String word2 = noSpaces(pWord);
+word2 = noPunctuation(pWord);
+word2 = word2.toLowerCase();
+if(word2.equals(reverse(word2)))
+  return true;
+return false;
 }
-
